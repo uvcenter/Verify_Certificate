@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-scrapbook-source="https://nust.edu.so/Verify/VerifyCertificate.php" data-scrapbook-create="20240811171447418" data-scrapbook-title="Verification">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification</title>
+    <meta name="author" content="Codeconvey">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="cropped-LOGO-32x32.png">
+</head>
+
+<body style="background: #fff;">
+    <div class="container">
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card p-3" style="box-shadow: 1px 1px 5px #aaaaaa; background: #fff;">
+                            <form id="searchForm" method="post">
+                                <div class="row" style="width: 80%; margin:auto;">
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" placeholder="Student ID" name="stdID" value="">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="submit" name="search" class="btn btn-primary w-100" value="Verify Certificate">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6 text-center">
+                                    <img src="nustlogo.png" alt="" style="width:200px; border-radius:10%;margin-top:5px;" class="mb-0 pb-0">
+                                    <h1 class="mt-0 mb-2" style="color: #007bff;font-size:50px;font-weight:700;">NILE UNIVERSITY</h1>
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+                            <div id="errorSection" style="display: none; color: red; text-align: center; margin-top: 10px;">This ID does not match. Please try another one.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the value entered in the input field
+            var inputValue = document.querySelector('input[name="stdID"]').value;
+
+            // Check if the input value is "200" and redirect to the other HTML file
+            if (inputValue === "200") {
+                window.location.href = "https://databaseid.github.io/test/Verify/index.html";
+            } else {
+                document.getElementById("errorSection").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
